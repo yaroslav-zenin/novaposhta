@@ -28,7 +28,7 @@ class City extends AbstractDb
                 ->where('city.name_ru=? OR city.name_ua=?', $name)
                 ->limit(1);
         $row = $this->getConnection()->fetchRow($select);
-        return $row['ref'];
+        return $row['ref'] ?? null;
     }
 
 }
